@@ -3,9 +3,8 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+![]({{site.baseurl}}/images/dots.png)
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+**connecting dots**...
 
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+A blogging platform that natively supports Jupyter notebooks in addition to other formats.
