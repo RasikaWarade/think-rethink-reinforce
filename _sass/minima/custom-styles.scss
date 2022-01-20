@@ -33,7 +33,9 @@ body {
 }
 
 /* Animation */
-
+.parallax{
+    background: linear-gradient(#3c76b8,#fff, #fff0c5, #FFCAC7);
+}
 .parallax>use {
     animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
