@@ -489,6 +489,8 @@ body { background-color: #fff0c5; }
 
 .page-content { background-color: #fff0c5; }
 
+.div-content { background-color: #fff0c5; }
+
 .site-footer { background-color: #fff; }
 
 .waves { position: relative; width: 100%; height: 15vh; margin-bottom: -7px; /*Fix for safari gap*/ min-height: 100px; max-height: 150px; }
