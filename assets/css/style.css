@@ -485,13 +485,11 @@ pre code { font-size: 15px !important; }
 
 p code { font-size: 19px; }
 
-body { background-color: linear-gradient(#3c76b8, #fff, #fff0c5, #FFCAC7); }
+body { background-color: linear-gradient(#3c76b8, #96c8fb, #fff0c5, #FFCAC7); }
 
-.page-content { background-color: linear-gradient(#3c76b8, #fff, #fff0c5, #FFCAC7); }
+.page-content { background-color: linear-gradient(#3c76b8, #96c8fb, #fff0c5, #FFCAC7); }
 
 .site-footer { background-color: #fff; }
-
-.div-content { background-color: linear-gradient(#3c76b8, #fff, #fff0c5, #FFCAC7); }
 
 .waves { position: relative; width: 100%; height: 15vh; margin-bottom: -7px; /*Fix for safari gap*/ min-height: 100px; max-height: 150px; }
 
