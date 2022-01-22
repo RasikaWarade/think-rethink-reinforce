@@ -489,7 +489,7 @@ body { background-color: #fff; }
 
 .site-header { background-color: #96c8fb; border-bottom: 1px solid #e8e8e8; }
 
-.page-content { background: linear-gradient(#96c8fb, #fff0c5, #FFCAC7); }
+.page-content { background: radial-gradient(ellipse at center, #cfd6e6 0%, #fffeea, #e7eff9 100%); }
 
 .site-footer { background-color: #fff; }
 
