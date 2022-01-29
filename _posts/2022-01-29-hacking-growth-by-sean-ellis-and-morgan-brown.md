@@ -5,9 +5,7 @@ description: A minimal example of using markdown with fastpages.
 categories: [marketing][hacking-growth]
 title: [Book] Hacking Growth
 ---
-
-:rocket:
-# Hacking Growth
+# :rocket: Hacking Growth
 
 The purpose of this blog is not to provide a book review, but rather thoughts I grew to connect with while reading the book, *Hacking Growth by Sean Ellis and Morgan Brown.*
 
@@ -24,14 +22,3 @@ Next, tailor your growth levers to fit the needs of your customers, products, an
 Finally, build a ***Mantra*** :
 
 > "Hacking growth is a vicious cycle of experimenting and optimizing these growth levers."
-
-## Keep In mind
-
-- Aha moment!
-- Product MUST-HAVE
-- Understand Customer Behaviour to keep a product a MUST HAVE
-- Be Data Driven
-- Take Experimental Approach
-- Prioritized
-
-## Product Launch
