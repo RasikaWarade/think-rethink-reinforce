@@ -1,14 +1,14 @@
 ---
+toc: true
 layout: post
-description: A minimal example of using markdown with fastpages.
+description: Thoughts collected from Book Read!
 categories: [marketing][hacking-growth]
 title: [Book] Hacking Growth
 ---
+
 <span style="color:#778899">The purpose of this blog is not to provide a book review, but rather thoughts I grew to connect with while reading the book, *Hacking Growth by Sean Ellis and Morgan Brown.*</span>
 
-
-
-# :rocket: Hacking Growth
+# Hacking Growth :rocket:
 
 A collection of thoughts and ideas is offered in this book as well as various examples of how companies have managed to hack their growth. The author explains why hacking growth strategy is more effective when cross-functional teams such as *Marketers, Engineers, Product, Data Scientist and Managers* from different disciplines work together rather than as separate teams. It gives some suggestions for how a startup or large company could structure their departments for a cross-functional team like that.
 
