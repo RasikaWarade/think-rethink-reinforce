@@ -1,9 +1,9 @@
 ---
-toc: true
+toc: false
 layout: post
 description: Thoughts collected from Book Read!
-categories: [marketing]
-title: Book - Hacking Growth
+categories: [marketing, hacking-growth]
+title: Hacking Growth
 ---
 
 The purpose of this blog is not to provide a book review, but rather thoughts I grew to connect with while reading the book, *Hacking Growth by Sean Ellis and Morgan Brown.*
