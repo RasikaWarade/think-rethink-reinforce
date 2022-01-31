@@ -72,6 +72,13 @@ All the html/css files and manifest.json are added in this directory.
 
 This is the entry point for your extension.
 
+Includes:
+- background.js
+- content.js
+- popup (js + html + css)
+- options (js + html)
+
+
 ```
 {
   "manifest_version": 3,

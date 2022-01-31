@@ -23,3 +23,17 @@ Finally, build a ***Mantra*** :
 
 > "Hacking growth is a vicious cycle of experimenting and optimizing these growth levers."
 
+
+
+# To keep in mind
+
+- Aha moment!
+- Product Core a MUST HAVE
+- Understand Customer Behaviour to make the product a MUST HAVE
+- Be Data Driven
+- Take Experimental Approach
+- Prioritized
+
+# Thinking about Product Launch
+
+![](./images/product-launch.png)
