@@ -68,15 +68,16 @@ This script contains all the common bundler config common between development an
 
 All the html/css files and manifest.json are added in this directory.
 
-> `src/manifest.json`
-
-This is the entry point for your extension.
-
 Includes:
 - background.js
 - content.js
 - popup (js + html + css)
 - options (js + html)
+
+
+> `src/manifest.json`
+
+This is the entry point for your extension.
 
 
 ```

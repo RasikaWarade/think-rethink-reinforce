@@ -36,4 +36,6 @@ Finally, build a ***Mantra*** :
 
 # Thinking about Product Launch
 
-![](./images/product-launch.png)
+<p align="center">
+    <img width="100%" height="300" src="/images/product-launch.png">
+</p>
