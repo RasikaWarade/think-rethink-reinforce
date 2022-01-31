@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Building Chrome Extension with Webpack Bundler | Think Re-Think Reinforce</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Building Chrome Extension with Webpack Bundler" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Chrome Extension + Webpack" />
+<meta property="og:description" content="Chrome Extension + Webpack" />
+<link rel="canonical" href="https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/webpack/2022/01/30/chrome-webpack.html" />
+<meta property="og:url" content="https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/webpack/2022/01/30/chrome-webpack.html" />
+<meta property="og:site_name" content="Think Re-Think Reinforce" />
+<meta property="og:image" content="https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-webpack-nob.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-30T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-webpack-nob.png" />
+<meta property="twitter:title" content="Building Chrome Extension with Webpack Bundler" />
+<script type="application/ld+json">
+{"url":"https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/webpack/2022/01/30/chrome-webpack.html","@type":"BlogPosting","image":"https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-webpack-nob.png","headline":"Building Chrome Extension with Webpack Bundler","dateModified":"2022-01-30T00:00:00-06:00","datePublished":"2022-01-30T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/webpack/2022/01/30/chrome-webpack.html"},"description":"Chrome Extension + Webpack","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/think-rethink-reinforce/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://rasikawarade.github.io/think-rethink-reinforce/feed.xml" title="Think Re-Think Reinforce" /><link rel="shortcut icon" type="image/x-icon" href="/think-rethink-reinforce/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/think-rethink-reinforce/">Think Re-Think Reinforce</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/think-rethink-reinforce/about/">About Me</a><a class="page-link" href="/think-rethink-reinforce/_pages/code_challenges.html">CodeChallenges</a><a class="page-link" href="/think-rethink-reinforce/search/">Search</a><a class="page-link" href="/think-rethink-reinforce/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Building Chrome Extension with Webpack Bundler</h1><p class="page-description">Chrome Extension + Webpack</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-30T00:00:00-06:00" itemprop="datePublished">
+        Jan 30, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/think-rethink-reinforce/categories/#chrome-extension">chrome-extension</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/think-rethink-reinforce/categories/#webpack">webpack</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#chrome-extension-manifest-version-3--webpack">Chrome Extension Manifest Version 3 + Webpack</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#boilerplate-code-brief">Boilerplate Code Brief</a></li>
+<li class="toc-entry toc-h2"><a href="#why">Why?</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#structure">Structure</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#initial-setup">Initial Setup</a></li>
+<li class="toc-entry toc-h2"><a href="#how-to-use-it">How to use it</a></li>
+</ul>
+</li>
+</ul><h1 id="chrome-extension-manifest-version-3--webpack">
+<a class="anchor" href="#chrome-extension-manifest-version-3--webpack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chrome Extension Manifest Version 3 + Webpack</h1>
+
+<h2 id="boilerplate-code-brief">
+<a class="anchor" href="#boilerplate-code-brief" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boilerplate Code Brief</h2>
+
+<p>This Chrome Extension boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and automatically refresh the browser based on changes.</p>
+
+<p>Find the codebase in the github link <a href="https://github.com/RasikaWarade/chrome-extension-mv3-webpack-boilerplate">here</a>.</p>
+
+<h2 id="why">
+<a class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why?</h2>
+
+<p>As per the <a href="https://developer.chrome.com/docs/extensions/mv3/mv2-sunset/">Chrome Extension Timeline</a>, all extensions supporting Manifest Version v2 will sunset in Jan 2023, and for new extensions, it has now become a requirement to move to Manifest Version V3.</p>
+
+<p>Google Chrome Extension Manifest v3’s most significant security change is that <a href="https://developer.chrome.com/docs/extensions/mv3/intro/mv3-overview/#remotely-hosted-code">remotely hosted code</a>, such as Javascript, is now not allowed. If your extension codebase is not bundled and structured in a modular fashion, this can lead to problems. A beginner like me will definitely have a hard time building a setup like that without any guideline.</p>
+
+<p>When I built my Chrome Extension, I had limited experience with webpack, and I believe that new beginners may have the same issue, which is why I decided to compile this resource.</p>
+
+<h1 id="structure">
+<a class="anchor" href="#structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Structure</h1>
+
+<p>I am assuming you have taken look for introduction at the <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">Chrome Extension docs</a> and <a href="https://webpack.js.org/">Webpack docs</a>.</p>
+
+<p>Also, if you are beginner, I am assuming you probably would have worked on the <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">Getting Started Guide</a> for extension. If not, I would give a quick look at it as well.</p>
+
+<p><strong>This repo bundles the code explained in the <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">Getting Started Guide</a> with Webpack.</strong></p>
+
+<h2 id="initial-setup">
+<a class="anchor" href="#initial-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initial Setup</h2>
+
+<p>Make sure you have latest <a href="https://formulae.brew.sh/formula/node">Node.js</a> installed.</p>
+
+<p>My current version:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(base) ➜  chrome-extension-mv3-webpack-boilerplate git:(main) ✗ node --version
+v16.13.1
+(base) ➜  chrome-extension-mv3-webpack-boilerplate git:(main) ✗ npm --version
+8.1.2
+
+</code></pre></div></div>
+
+<p>For the initial setup, below webpack bundles were installed:</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install --save-dev webpack webpack-cli html-webpack-plugin clean-webpack-plugin copy-webpack-plugin</code></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">webpack.development.js</code></p>
+</blockquote>
+
+<p>For Development Purposes, you can configure this script and run the command <code class="language-plaintext highlighter-rouge">npm run build</code> to reflect changes.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">webpack.production.js</code></p>
+</blockquote>
+
+<p>For production release, you can configure this script and run the command <code class="language-plaintext highlighter-rouge">npm run release</code>  to reflect changes.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">webpack.common.js</code></p>
+</blockquote>
+
+<p>This script contains all the common bundler config common between development and production scripts above.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">src</code></p>
+</blockquote>
+
+<p>All the html/css files and manifest.json are added in this directory.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">src/manifest.json</code></p>
+</blockquote>
+
+<p>This is the entry point for your extension.</p>
+
+<h2 id="how-to-use-it">
+<a class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it</h2>
+
+<ol>
+  <li>Clone the repo</li>
+  <li>Run command <code class="language-plaintext highlighter-rouge">npm install</code> to install all node-modules / dependencies</li>
+  <li>Run command <code class="language-plaintext highlighter-rouge">npm run build</code>
+</li>
+  <li>This will build the <code class="language-plaintext highlighter-rouge">dist</code> folder</li>
+  <li>Load the Chrome Extension you just build by pointing to this <code class="language-plaintext highlighter-rouge">dist</code> folder</li>
+</ol>
+
+<p>Note: <code class="language-plaintext highlighter-rouge">gitignore</code> will help ignore the <code class="language-plaintext highlighter-rouge">node_modules</code> and <code class="language-plaintext highlighter-rouge">dist</code> folder to be pushed to the github</p>
+
+
+  </div><a class="u-url" href="/think-rethink-reinforce/chrome-extension/webpack/2022/01/30/chrome-webpack.html" hidden></a>
+</article>
+
+      </div>
+    </main><style type="text/css">
+  .div-content {
+    background-color: #fff;
+  }
+</style>
+<div class="div-content">
+  <!-- <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+    preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+  </svg> -->
+</div>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/think-rethink-reinforce/%20/"></data>
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <!-- <p class="feed-subscribe">
+          <a href="/think-rethink-reinforce/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/think-rethink-reinforce/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p> -->
+      </div>
+      <div class="footer-col">
+        <p>Connecting dots...</p>
+      </div>
+    </div>
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/RasikaWarade" target="_blank" title="RasikaWarade"><svg class="svg-icon grey"><use xlink:href="/think-rethink-reinforce/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/rasikawarade" target="_blank" title="rasikawarade"><svg class="svg-icon grey"><use xlink:href="/think-rethink-reinforce/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/Rasika5W" target="_blank" title="Rasika5W"><svg class="svg-icon grey"><use xlink:href="/think-rethink-reinforce/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+  </div>
+
+</footer></body>
+
+</html>
