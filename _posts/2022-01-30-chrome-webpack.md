@@ -138,4 +138,4 @@ Note: `gitignore` will help ignore the `node_modules` and `dist` folder to be pu
 
 # What's Next!
 
-Feel free to use this template as boilerplate and update as per your own requirements. As I mentioned this bundling would help when you want to access some remotely hosted code / libraries, and in my next blog you will see an example of I utilized it.
+Feel free to use this template as boilerplate and update as per your own requirements. As I mentioned this bundling would help when you want to access some remotely hosted code / libraries, and in my next blog you will see an example of how I utilized it.
