@@ -45,6 +45,7 @@ v16.13.1
 
 ```
 
+## Configuration
 
 For the initial setup, below webpack bundles were installed:
 
@@ -71,9 +72,52 @@ All the html/css files and manifest.json are added in this directory.
 
 This is the entry point for your extension.
 
+```
+{
+  "manifest_version": 3,
+  "version": "0.1",
+  "name": "MV3 Extension with Webpack",
+  "description": "Webpack Modular Framework!",
+  "action": {
+    "default_popup": "./popup.html",
+    "default_icon": {
+      "16": "./src/icons/get_started16.png",
+      "32": "./src/icons/get_started32.png",
+      "48": "./src/icons/get_started48.png",
+      "128": "./src/icons/get_started128.png"
+    },
+    "default_title": "Getting Started MV3!"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "./src/icons/get_started16.png",
+    "32": "./src/icons/get_started32.png",
+    "48": "./src/icons/get_started48.png",
+    "128": "./src/icons/get_started128.png"
+  },
+  "options_page": "options.html"
+}
+```
 
 
-## How to use it
+# How to use it
 
 1. Clone the repo
 2. Run command `npm install` to install all node-modules / dependencies
