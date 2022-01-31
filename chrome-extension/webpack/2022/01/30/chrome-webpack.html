@@ -126,9 +126,10 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#structure">Structure</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#initial-setup">Initial Setup</a></li>
-<li class="toc-entry toc-h2"><a href="#how-to-use-it">How to use it</a></li>
+<li class="toc-entry toc-h2"><a href="#configuration">Configuration</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h1"><a href="#how-to-use-it">How to use it</a></li>
 </ul><h1 id="chrome-extension-manifest-version-3--webpack">
 <a class="anchor" href="#chrome-extension-manifest-version-3--webpack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chrome Extension Manifest Version 3 + Webpack</h1>
 
@@ -170,6 +171,9 @@ v16.13.1
 
 </code></pre></div></div>
 
+<h2 id="configuration">
+<a class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
 <p>For the initial setup, below webpack bundles were installed:</p>
 
 <p><code class="language-plaintext highlighter-rouge">npm install --save-dev webpack webpack-cli html-webpack-plugin clean-webpack-plugin copy-webpack-plugin</code></p>
@@ -204,8 +208,51 @@ v16.13.1
 
 <p>This is the entry point for your extension.</p>
 
-<h2 id="how-to-use-it">
-<a class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "manifest_version": 3,
+  "version": "0.1",
+  "name": "MV3 Extension with Webpack",
+  "description": "Webpack Modular Framework!",
+  "action": {
+    "default_popup": "./popup.html",
+    "default_icon": {
+      "16": "./src/icons/get_started16.png",
+      "32": "./src/icons/get_started32.png",
+      "48": "./src/icons/get_started48.png",
+      "128": "./src/icons/get_started128.png"
+    },
+    "default_title": "Getting Started MV3!"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "&lt;all_urls&gt;"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "./src/icons/get_started16.png",
+    "32": "./src/icons/get_started32.png",
+    "48": "./src/icons/get_started48.png",
+    "128": "./src/icons/get_started128.png"
+  },
+  "options_page": "options.html"
+}
+</code></pre></div></div>
+
+<h1 id="how-to-use-it">
+<a class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it</h1>
 
 <ol>
   <li>Clone the repo</li>
