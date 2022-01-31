@@ -201,7 +201,9 @@ v16.13.1
   <p><code class="language-plaintext highlighter-rouge">src</code></p>
 </blockquote>
 
-<p>All the html/css files and manifest.json are added in this directory.</p>
+<p>All your extension’s development code must be placed in src folder, including the extension manifest.</p>
+
+<p>The boilerplate is already prepared to have a popup, a options page and a background page. You can easily customize this.</p>
 
 <p>Includes:</p>
 <ul>
@@ -269,7 +271,16 @@ v16.13.1
   <li>Run command <code class="language-plaintext highlighter-rouge">npm run build</code>
 </li>
   <li>This will build the <code class="language-plaintext highlighter-rouge">dist</code> folder</li>
-  <li>Load the Chrome Extension you just build by pointing to this <code class="language-plaintext highlighter-rouge">dist</code> folder</li>
+  <li>Load your extension on Chrome following:
+    <ol>
+      <li>Access <code class="language-plaintext highlighter-rouge">chrome://extensions/</code>
+</li>
+      <li>Check <code class="language-plaintext highlighter-rouge">Developer mode</code>
+</li>
+      <li>Click on <code class="language-plaintext highlighter-rouge">Load unpacked</code> extension</li>
+      <li>Select the <code class="language-plaintext highlighter-rouge">dist</code> folder</li>
+    </ol>
+  </li>
 </ol>
 
 <p>Note: <code class="language-plaintext highlighter-rouge">gitignore</code> will help ignore the <code class="language-plaintext highlighter-rouge">node_modules</code> and <code class="language-plaintext highlighter-rouge">dist</code> folder to be pushed to the github</p>
