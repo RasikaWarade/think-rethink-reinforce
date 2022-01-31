@@ -25,7 +25,8 @@ Finally, build a ***Mantra*** :
 
 
 
-# To keep in mind
+# Thoughts
+## To keep in mind
 
 - Aha moment!
 - Product Core a MUST HAVE
@@ -34,6 +35,6 @@ Finally, build a ***Mantra*** :
 - Take Experimental Approach
 - Prioritized
 
-# Thinking about Product Launch
+## Thinking about Product Launch
 
 ![Product Launch]({{site.baseurl}}/images/product-launch.png "Fig. Launch Early vs Mature")

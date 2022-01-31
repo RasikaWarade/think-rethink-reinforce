@@ -9,11 +9,11 @@ image: images/chrome-webpack-nob.png
 
 # Chrome Extension Manifest Version 3 + Webpack  
 
-## Boilerplate Code Brief
-
-This Chrome Extension boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and automatically refresh the browser based on changes.
+## Boilerplate Code 
 
 Find the codebase in the github link [here](https://github.com/RasikaWarade/chrome-extension-mv3-webpack-boilerplate).
+
+The Chrome Extension boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and automatically refresh the browser based on changes.
 
 ## Why?
 
