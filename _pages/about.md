@@ -10,7 +10,7 @@ permalink: /about/
 
 ![]({{site.baseurl}}/images/dots.png)
 
-A blogging platform that continues to evolve in thoughts, rethinking and reinforcing the learnings.
+Blogs that continue to evolve in thoughts, rethinking and reinforcing the learnings.
 
 
 **Author**
@@ -26,6 +26,8 @@ It's my goal to learn :books: and write :pencil2: in public this year, and I'm s
 Hope you find these readings delightful and helps a tiny little bit in your own learnings. 
 
 Feel free to share comments, any feedback or just connect with me at [LinkedIn](https://www.linkedin.com/in/rasikawarade/).
+
+Check out my work at [Github](https://github.com/RasikaWarade) or [other site](https://vitaminalgo.io/).
 
 
 
