@@ -13,6 +13,7 @@ image: images/chrome-firebase-nob.png
 
 The Chrome Extension with MV3 version shows example of authentication of Firebase SDK9 with `Google Sign In` enable. This boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and automatic reload the browser based on changes.
 
+Find the codebase in the github link [here](https://github.com/RasikaWarade/chrome-extension-mv3-firebase-boilerplate).
 
 ## Why?
 
