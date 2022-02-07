@@ -27,17 +27,29 @@ When I built my Chrome Extension, I had limited experience with webpack, and I b
 
 Including Firebase libraries is an example. 
 
-There are lots of changes already from moving MV2 to MV3 version for chrome extension. At the same time, firebase latest version suggests using SDK9 which needs module bundler support. I could not find guideline and hit few issues , that I will list down below going over the documentation. As of today 31, Jan 2022, the documentation support for including firebase SDK9 in Chrome Extension is still confusing. 
+There are lots of changes already from moving MV2 to MV3 version for chrome extension. At the same time, firebase latest version suggests using SDK9 which needs module bundler support. 
 
-Issues:
+
+For a begineer, you can start with the Firebase [quickstart guide](https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample) but it currently it is incomplete and does not include examples for SDK9. I could not find any quickstart guideline with SDK9 support with Chrome Extension and also hit few issues while following along some of the official documentation, that I will list down below going over the documentation. 
+
+As of today 31, Jan 2022, the documentation support for including firebase SDK9 in Chrome Extension is still confusing.  With this repo, I have made it work for my use case to enable Google Sign In and ( you can extend the logic for other sign in methods) by combining the resources / code snippets and hopefully it will help someone, moving to Chrome Extension MV3 version this year.
+
+**Issues I have hit:**
 - As a beginner I would have preferred using their built in sign in `firebase-ui` library, [FirebaseUI  functionality](https://firebase.google.com/docs/auth/web/firebaseui). I can confirm this does not work at the moment, as this library does not support the optimizations of module bundling.
 - I have tried and it does not work for `signInWithPopup` and `signInWithRedirect` functionalities for [Google Sign In](https://firebase.google.com/docs/auth/web/google-signin) due to the [limitations on the Chrome Extension MV3 side](https://firebase.google.com/docs/auth/web/google-signin#authenticate_with_firebase_in_a_chrome_extension).
 
+## Before you begin 
+Make sure you have followed the steps to create and register Firebase project/app as below:
+1. [Create a Firebase project and register your app](https://firebase.google.com/docs/web/setup#create-firebase-project-and-app)
+2. Enable Google Sign-In in the Firebase console:
+In the [Firebase console](https://console.firebase.google.com/), open the **Auth** section.
+On the **Sign in** method tab, enable the **Google sign-in** method and click [Save](https://console.firebase.google.com/).
+3. Authenticate with Firebase in a Chrome extension as [here](https://firebase.google.com/docs/auth/web/google-signin#authenticate_with_firebase_in_a_chrome_extension)
 
-With this repo, I have made it work for my use case to enable Google Sign In and ( you can extend the logic for other sign in methods) by combining the resources /code snippets and hopefully it will help someone, moving to Chrome Extension MV3 version this year.
 
-Referrences:
+**References:**
 - [Google Sign In](https://firebase.google.com/docs/auth/web/google-signin)
+- [Configure Firebase App](https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample)
 
 # Demo
 
@@ -52,6 +64,7 @@ I am assuming you have taken look for introduction at the [Chrome Extension docs
 Also, if you are beginner, I am assuming you probably would have worked on the [Getting Started Guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/) for extension. If not, I would give a quick look at it as well.
 
 **This repo bundles the code explained in the [Getting Started Guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/) with Webpack.**
+
 
 ## Initial Setup
 
@@ -104,7 +117,7 @@ Includes:
 
 - This is the entry point for your extension.
 - Added "identity" to permission to support authenticate operations.
-- Fill the OAuth details in the manifest, which are custom to your project/app.
+- Fill the OAuth details in the manifest, which are custom to your project /app. If you are not sure, follow the [quickstart guide](https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample) on setting up a sample.
 
 ```
   "oauth2": {
