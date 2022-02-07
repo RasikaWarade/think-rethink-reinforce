@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -125,6 +125,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#boilerplate-code-brief">Boilerplate Code Brief</a></li>
 <li class="toc-entry toc-h2"><a href="#why">Why?</a></li>
 <li class="toc-entry toc-h2"><a href="#firebase">Firebase</a></li>
+<li class="toc-entry toc-h2"><a href="#before-you-begin">Before you begin</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#demo">Demo</a></li>
@@ -159,19 +160,34 @@ window.onload = wrap_img;
 
 <p>Including Firebase libraries is an example.</p>
 
-<p>There are lots of changes already from moving MV2 to MV3 version for chrome extension. At the same time, firebase latest version suggests using SDK9 which needs module bundler support. I could not find guideline and hit few issues , that I will list down below going over the documentation. As of today 31, Jan 2022, the documentation support for including firebase SDK9 in Chrome Extension is still confusing.</p>
+<p>There are lots of changes already from moving MV2 to MV3 version for chrome extension. At the same time, firebase latest version suggests using SDK9 which needs module bundler support.</p>
 
-<p>Issues:</p>
+<p>For a begineer, you can start with the Firebase <a href="https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample">quickstart guide</a> but it currently it is incomplete and does not include examples for SDK9. I could not find any quickstart guideline with SDK9 support with Chrome Extension and also hit few issues while following along some of the official documentation, that I will list down below going over the documentation.</p>
+
+<p>As of today 31, Jan 2022, the documentation support for including firebase SDK9 in Chrome Extension is still confusing.  With this repo, I have made it work for my use case to enable Google Sign In and ( you can extend the logic for other sign in methods) by combining the resources / code snippets and hopefully it will help someone, moving to Chrome Extension MV3 version this year.</p>
+
+<p><strong>Issues I have hit:</strong></p>
 <ul>
   <li>As a beginner I would have preferred using their built in sign in <code class="language-plaintext highlighter-rouge">firebase-ui</code> library, <a href="https://firebase.google.com/docs/auth/web/firebaseui">FirebaseUI  functionality</a>. I can confirm this does not work at the moment, as this library does not support the optimizations of module bundling.</li>
   <li>I have tried and it does not work for <code class="language-plaintext highlighter-rouge">signInWithPopup</code> and <code class="language-plaintext highlighter-rouge">signInWithRedirect</code> functionalities for <a href="https://firebase.google.com/docs/auth/web/google-signin">Google Sign In</a> due to the <a href="https://firebase.google.com/docs/auth/web/google-signin#authenticate_with_firebase_in_a_chrome_extension">limitations on the Chrome Extension MV3 side</a>.</li>
 </ul>
 
-<p>With this repo, I have made it work for my use case to enable Google Sign In and ( you can extend the logic for other sign in methods) by combining the resources /code snippets and hopefully it will help someone, moving to Chrome Extension MV3 version this year.</p>
+<h2 id="before-you-begin">
+<a class="anchor" href="#before-you-begin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Before you begin</h2>
+<p>Make sure you have followed the steps to create and register Firebase project/app as below:</p>
+<ol>
+  <li><a href="https://firebase.google.com/docs/web/setup#create-firebase-project-and-app">Create a Firebase project and register your app</a></li>
+  <li>Enable Google Sign-In in the Firebase console:
+In the <a href="https://console.firebase.google.com/">Firebase console</a>, open the <strong>Auth</strong> section.
+On the <strong>Sign in</strong> method tab, enable the <strong>Google sign-in</strong> method and click <a href="https://console.firebase.google.com/">Save</a>.</li>
+  <li>Authenticate with Firebase in a Chrome extension as <a href="https://firebase.google.com/docs/auth/web/google-signin#authenticate_with_firebase_in_a_chrome_extension">here</a>
+</li>
+</ol>
 
-<p>Referrences:</p>
+<p><strong>References:</strong></p>
 <ul>
   <li><a href="https://firebase.google.com/docs/auth/web/google-signin">Google Sign In</a></li>
+  <li><a href="https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample">Configure Firebase App</a></li>
 </ul>
 
 <h1 id="demo">
@@ -255,7 +271,7 @@ v16.13.1
 <ul>
   <li>This is the entry point for your extension.</li>
   <li>Added “identity” to permission to support authenticate operations.</li>
-  <li>Fill the OAuth details in the manifest, which are custom to your project/app.</li>
+  <li>Fill the OAuth details in the manifest, which are custom to your project /app. If you are not sure, follow the <a href="https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample">quickstart guide</a> on setting up a sample.</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "oauth2": {
