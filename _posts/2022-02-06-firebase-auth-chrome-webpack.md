@@ -178,3 +178,6 @@ Code Snippet:
 
 Note: `gitignore` will help ignore the `node_modules` and `dist` folder to be pushed to the github
 
+# What's Next!
+
+Feel free to use this template as boilerplate and a starting point to enable one form of sign in method. Feel free to clone and update as per your own requirements to enable other sign-in methods like Github.
