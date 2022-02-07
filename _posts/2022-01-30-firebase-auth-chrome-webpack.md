@@ -9,4 +9,4 @@ image: images/chrome-firebase-nob.png
 
 # Coming soon
 
-> youtube: https://www.youtube.com/watch?v=Kb_qZ7qxz9A
+{% include youtube.html content="https://www.youtube.com/watch?v=Kb_qZ7qxz9A" %}
