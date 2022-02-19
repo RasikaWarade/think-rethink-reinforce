@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Chrome Extension + Webpack
-categories: [chrome-extension, webpack]
+categories: [chrome-extension, webpack, javascript]
 title: Building Chrome Extension with Webpack Bundler
 image: images/chrome-webpack-nob.png
 ---
