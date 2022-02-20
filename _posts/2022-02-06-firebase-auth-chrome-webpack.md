@@ -53,8 +53,8 @@ On the **Sign in** method tab, enable the **Google sign-in** method and click [S
 - [Configure Firebase App](https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample)
 
 # Demo
+{% include video.html url="https://github.com/RasikaWarade/think-rethink-reinforce/blob/master/demo-videos/chrome_firebase_demo.mp4" %}
 
-<div style="height: 0; padding-bottom: calc(90.91%); position:relative; width: 100%;"><iframe allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin" src="https://www.kapwing.com/e/620064b61a816d00994e70fa" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="Embedded content made on Kapwing" width="100%"></iframe></div>
 
 # Structure
 
