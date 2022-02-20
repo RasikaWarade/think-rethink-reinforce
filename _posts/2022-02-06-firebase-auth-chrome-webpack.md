@@ -53,7 +53,7 @@ On the **Sign in** method tab, enable the **Google sign-in** method and click [S
 - [Configure Firebase App](https://firebaseopensource.com/projects/firebase/quickstart-js/auth/chromextension/readme/#setting_up%20this%20sample)
 
 # Demo
-{% include video.html url="https://github.com/RasikaWarade/think-rethink-reinforce/blob/master/demo-videos/chrome_firebase_demo.mp4" %}
+{% include video.html url="https://github.com/RasikaWarade/think-rethink-reinforce/blob/master/demo-videos/chrome_firebase_demo.mp4?raw=true" %}
 
 
 # Structure
