@@ -10,8 +10,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Firebase SDK 9 + Firebase Auth + Chrome Extension + Webpack" />
 <meta property="og:description" content="Firebase SDK 9 + Firebase Auth + Chrome Extension + Webpack" />
-<link rel="canonical" href="https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/2022/02/06/firebase-auth-chrome-webpack.html" />
-<meta property="og:url" content="https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/2022/02/06/firebase-auth-chrome-webpack.html" />
+<link rel="canonical" href="https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/javascript/2022/02/06/firebase-auth-chrome-webpack.html" />
+<meta property="og:url" content="https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/javascript/2022/02/06/firebase-auth-chrome-webpack.html" />
 <meta property="og:site_name" content="Think Re-Think Reinforce" />
 <meta property="og:image" content="https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-firebase-nob.png" />
 <meta property="og:type" content="article" />
@@ -20,10 +20,10 @@
 <meta property="twitter:image" content="https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-firebase-nob.png" />
 <meta property="twitter:title" content="Building Chrome Extension with Firebase SDK 9" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-06T00:00:00-06:00","datePublished":"2022-02-06T00:00:00-06:00","description":"Firebase SDK 9 + Firebase Auth + Chrome Extension + Webpack","headline":"Building Chrome Extension with Firebase SDK 9","image":"https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-firebase-nob.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/2022/02/06/firebase-auth-chrome-webpack.html"},"url":"https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/2022/02/06/firebase-auth-chrome-webpack.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-06T00:00:00-06:00","datePublished":"2022-02-06T00:00:00-06:00","description":"Firebase SDK 9 + Firebase Auth + Chrome Extension + Webpack","headline":"Building Chrome Extension with Firebase SDK 9","image":"https://rasikawarade.github.io/think-rethink-reinforce/images/chrome-firebase-nob.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/javascript/2022/02/06/firebase-auth-chrome-webpack.html"},"url":"https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/firebase/webpack/javascript/2022/02/06/firebase-auth-chrome-webpack.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/think-rethink-reinforce/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://rasikawarade.github.io/think-rethink-reinforce/feed.xml" title="Think Re-Think Reinforce" /><link rel="shortcut icon" type="image/x-icon" href="/think-rethink-reinforce/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /><script src="https://hypothes.is/embed.js" async></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
@@ -111,6 +111,9 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/think-rethink-reinforce/categories/#webpack">webpack</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/think-rethink-reinforce/categories/#javascript">javascript</a>
         
       
       </p>
@@ -347,7 +350,15 @@ const config = {
 
 <p>Feel free to use this template as boilerplate and a starting point to enable one form of sign in method. Feel free to clone and update as per your own requirements to enable other sign-in methods like Github.</p>
 
-  </div><a class="u-url" href="/think-rethink-reinforce/chrome-extension/firebase/webpack/2022/02/06/firebase-auth-chrome-webpack.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="RasikaWarade/think-rethink-reinforce"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/think-rethink-reinforce/chrome-extension/firebase/webpack/javascript/2022/02/06/firebase-auth-chrome-webpack.html" hidden></a>
 </article>
 
       </div>
